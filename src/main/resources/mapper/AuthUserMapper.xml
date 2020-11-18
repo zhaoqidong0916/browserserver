@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.common.dao.AuthUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ht.common.entity.AuthUser">
+        <id column="ID" property="id" />
+        <result column="USERNAME" property="username" />
+        <result column="PASSWORD" property="password" />
+        <result column="LOGIN_NAME" property="loginName" />
+        <result column="EMAIL" property="email" />
+        <result column="SEX" property="sex" />
+        <result column="IP_ADDRESS" property="ipAddress" />
+        <result column="PHONE" property="phone" />
+        <result column="USER_TYPE" property="userType" />
+        <result column="CHECK_STATUS" property="checkStatus" />
+        <result column="CREATE_TIME" property="createTime" />
+        <result column="UPDATE_TIME" property="updateTime" />
+        <result column="REMARK" property="remark" />
+        <result column="ROLE_NAME" property="roleName" />
+        <result column="ROLE_ID" property="roleId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, USERNAME, PASSWORD, LOGIN_NAME, EMAIL, SEX, IP_ADDRESS, PHONE, USER_TYPE, CHECK_STATUS, CREATE_TIME, UPDATE_TIME, REMARK,ROLE_ID
+    </sql>
+
+    <sql id="select_param">
+        <if test="request!=null">
+            <if test="request.username!=null and request.username !=''">
+                AND au.USERNAME LIKE concat('%',#{request.username},'%')
+            </if>
+            <if test="request.createTime!=null and request.createTime !=''">
+                AND DATE(au.CREATE_TIME) = #{request.createTime}
+            </if>
+            <if test="request.loginName!=null and request.loginName!= ''">
+                AND au.LOGIN_NAME LIKE concat('%',#{request.loginName},'%')
+            </if>
+        </if>
+        AND au.CHECK_STATUS != 2
+    </sql>
+
+    <select id="userList" parameterType="com.ht.common.request.system.user.UserPageRequest"
+            resultMap="BaseResultMap">
+        SELECT
+        au.ID, au.USERNAME,au.PASSWORD,au.LOGIN_NAME, au.EMAIL,au.SEX,au.CHECK_STATUS,
+        au.PHONE,au.CREATE_TIME,aur.ROLE_NAME
+        FROM auth_user au
+        LEFT JOIN auth_user_role aur ON au.ID = aur.USER_ID
+        <where>
+            <include refid="select_param"/>
+        </where>
+        ORDER BY au.CREATE_TIME DESC
+        LIMIT #{request.startNum}, #{request.size}
+    </select>
+
+    <select id="userListCount" parameterType="com.ht.common.request.system.user.UserPageRequest"
+            resultType="java.lang.Integer">
+        SELECT
+        COUNT(1)
+        FROM auth_user au
+        LEFT JOIN auth_user_role aur ON au.ID = aur.USER_ID
+        <where>
+            <include refid="select_param"/>
+        </where>
+    </select>
+</mapper>

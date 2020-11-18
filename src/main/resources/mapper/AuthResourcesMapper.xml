@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.common.dao.AuthResourcesMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ht.common.entity.AuthResources">
+        <id column="ID" property="id"/>
+        <result column="HTML_URL" property="htmlUrl"/>
+        <result column="URL_NAME" property="urlName"/>
+        <result column="PARENT_NAME" property="parentName"/>
+        <result column="ICON_TYPE" property="iconType"/>
+        <result column="SORT" property="sort"/>
+        <result column="SECOND_SORT" property="secondSort"/>
+        <result column="CREATE_TIME" property="createTime"/>
+        <result column="REMARK" property="remark"/>
+        <result column="CHECK_STATUS" property="checkStatus"/>
+        <result column="UPDATE_TIME" property="updateTime"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, HTML_URL, URL_NAME, PARENT_NAME, ICON_TYPE, SORT, SECOND_SORT, CREATE_TIME, REMARK, CHECK_STATUS, UPDATE_TIME
+    </sql>
+
+
+    <select id="selectAllForLeftSideBar" resultMap="BaseResultMap">
+        SELECT  HTML_URL , URL_NAME ,PARENT_NAME ,ID,SORT,SECOND_SORT,ICON_TYPE
+        FROM auth_resources
+        WHERE CHECK_STATUS = 0
+    </select>
+
+    <select id="selectForLeftSideBar" resultMap="BaseResultMap">
+        SELECT ar.HTML_URL, ar.URL_NAME,
+        ar.PARENT_NAME,ar.ID,ar.SORT,ar.SECOND_SORT,ar.ICON_TYPE
+        FROM auth_resources ar
+        LEFT JOIN auth_role_resources arr ON arr.RESOURCE_ID = ar.ID
+        WHERE ar.CHECK_STATUS =0
+        AND arr.CHECK_STATUS =0
+        AND arr.ROLE_ID = #{roleId}
+    </select>
+
+
+</mapper>

@@ -1,0 +1,70 @@
+
+<div class="main">
+    <div class="searchTitle">
+        <span class="searchStyle" ></span>
+        <span class="searchText">用户管理>>菜单管理</span>
+    </div>
+    <div class="contentBox">
+        <div class="searchItems">
+            <div class="form-group">
+                <label class="">父名称：</label>
+                <input type="text" maxlength="40" class="form-control js_accountNumber">
+            </div>
+            <div class="form-group">
+                <label class="">子名称：</label>
+                <input type="text" maxlength="40" class="form-control js_name">
+            </div>
+
+            <div class="btnBox">
+                <button type="button" class="btn btn-info js_newUsers">新建菜单</button>
+                <button type="button" class="btn btn-info js_resetQuery">重置</button>
+                <button type="button" class="btn btn-info query">查询</button>
+            </div>
+        </div>
+        <div class="content">
+            <table id="detailGrid">
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- 新建角色 -->
+<div id="menuModal" class="modal fade" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header my-modal-header">
+                <span class="modal-title">编辑菜单</span>
+            </div>
+            <div class="modal-body update-modal-body">
+                <form>
+                    <input type="hidden" id="rowId" name="id">
+                    <div class="form-group">
+                        <label class=""><span class="red">*</span>父模块名：</label>
+                        <input  required maxlength="100" name="parentName" type="text" class="form-control parentName" placeholder="父模块名">
+                    </div>
+                    <div class="form-group">
+                        <label class=""><span class="red">*</span>父模块排序：</label>
+                        <input required name="sort" type="text" class="form-control sort" onkeyup="this.value=this.value.replace(/\D/g, '')" />
+                    </div>
+                    <div class="form-group">
+                        <label class=""><span class="red">*</span>子模块名：</label>
+                        <input  required maxlength="100" name="urlName" type="text" class="form-control urlName" placeholder="子模块名">
+                    </div>
+                    <div class="form-group">
+                        <label class=""><span class="red">*</span>url地址：</label>
+                        <input  required maxlength="200" name="htmlUrl" type="text" class="form-control htmlUrl" placeholder="url地址">
+                    </div>
+                    <div class="form-group">
+                        <label class=""><span class="red">*</span>子模块排序：</label>
+                        <input required name="secondSort" type="text" class="form-control secondSort" onkeyup="this.value=this.value.replace(/\D/g, '')" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-info menuFormBtn submitUserForm">确认</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

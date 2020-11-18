@@ -1,0 +1,111 @@
+
+<div class="main">
+    <div class="searchTitle">
+        <span class="searchStyle"></span>
+        <span class="searchText">应用管理>>资源管理</span>
+    </div>
+    <div class="contentBox">
+        <div class="searchItems">
+            <div class="form-group">
+                <label class="">名称：</label>
+                <input maxlength="100" type="text" name="resourcesName" class="form-control resourcesName">
+            </div>
+            <div class="btnBox">
+                <button type="button" class="btn btn-info js_jqQuery">查询</button>
+                <button type="button" class="btn btn-info js_resetQuery">重置</button>
+                <button type="button" class="btn btn-info customerAdd">新建</button>
+            </div>
+        </div>
+        <div class="content">
+            <table id="detailGrid">
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="resourceModal" class="modal fade" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header my-modal-header">
+                <span class="modal-title">添加证书</span>
+            </div>
+            <div class="modal-body update-modal-body">
+                <form >
+                    <input type="hidden" class="rowId">
+                    <div class="form-group">
+                        <label class=""><span class="red">*</span>资源名称：</label>
+                        <input type="text" required name="resourcesName" class="form-control resourcesName"/>
+                    </div>
+                    <div class="form-group">
+                        <label class=""><span class="red">*</span>资源类型：</label>
+                        <select required name="resourcesType" class="form-control resourcesType">
+                            <option selected value="2">图片</option>
+                            <option value="1">文本</option>
+                            <option value="3">视频</option>
+                        </select>
+                    </div>
+                    <div class="form-group loadDiv">
+                        <label>上传文件:</label>
+                        <div id="uploader" class="wu-example uploaders" style="overflow: hidden;">
+                            <div id="fileList" class="uploader-list">
+                                <p style="display: none;color: red;" class="flagPs">请选择需要上传的文件!</p>
+                                <p style="display: none;color: red;" class="tips"></p>
+                            </div>
+                            <div class="btns fl" style="margin-top: 5px;width: 100%;">
+                                <div id="upInfo" ></div>
+                                <button id="filePicker" type="button" class="fl btn" style="padding: 0;" >选择文件</button>
+                                <button type="button" class="btn btn-info fr" id="btn">开始上传</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>资源描述</label>
+                        <textarea maxlength="260" name="resourcesDescribe" class="describe form-control"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-info submitUserForm">确认</button>
+                <button type="button" class="btn btn-default closeBtn" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="resourceDetailModal" class="modal fade" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header my-modal-header">
+                <span class="modal-title">查看证书</span>
+            </div>
+            <div class="modal-body update-modal-body">
+                <form >
+                    <input type="hidden" class="rowId">
+                    <div class="form-group">
+                        <label class="shortLabel">资源名称：</label>
+                        <input name="resourcesName" type="text" class="form-control resourcesName shortInput"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="shortLabel">资源类型：</label>
+                        <input name="resourcesType" type="text" class="form-control resourcesType shortInput"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="shortLabel">安装包地址：</label>
+                        <input name="downloadUrl" type="text" class="form-control downloadUrl shortInput"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="shortLabel fl">资源描述：</label>
+                        <textarea maxlength="260" name="resourcesDescribe" class="resourcesDescribe form-control ml3 shortInput"></textarea>
+                    </div>
+                    <div class="form-group patchDiv">
+                        <label class="shortLabel fl" >附件：</label>
+                        <div class="form-control playerDiv ml3 shortInput" style="height: 220px;"></div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default closeBtn" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

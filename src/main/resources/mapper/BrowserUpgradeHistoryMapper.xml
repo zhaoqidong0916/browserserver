@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.common.dao.BrowserUpgradeHistoryMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ht.common.entity.BrowserUpgradeHistory">
+        <id column="ID" property="id" />
+        <result column="TYPE" property="type" />
+        <result column="CHECK_STATUS" property="checkStatus" />
+        <result column="CREATE_TIME" property="createTime" />
+        <result column="UPDATE_TIME" property="updateTime" />
+        <result column="DAY" property="day" />
+        <result column="MONTH" property="month" />
+        <result column="YEAR" property="year" />
+        <result column="REMARK" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, TYPE, CHECK_STATUS, CREATE_TIME, UPDATE_TIME, DAY, MONTH, YEAR, REMARK
+    </sql>
+
+</mapper>

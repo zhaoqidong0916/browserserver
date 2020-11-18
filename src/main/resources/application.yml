@@ -1,0 +1,50 @@
+server:
+  port: 20000
+
+#直接连接数据库方式
+#spring:
+#  datasource:
+#    driver-class-name: com.kingbase8.Driver
+#    url: jdbc:kingbase8://192.168.0.70:54321/BROWSER?client_encoding=GBK
+#    username: SYSTEM
+#    password: haitai@123
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.1.201:3306/browser?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false
+    username: root
+    password: 123456
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+
+
+#mybatis-plus 配置
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  typeAliasesPackage: com.ht.common.entity
+
+  global-config:
+    db-config:
+      id-type: uuid
+    banner: false
+    #忽略判断
+    field-strategy: IGNORED
+  configuration:
+    cache-enabled: false
+
+
+#方式上传
+upload:
+  path: C:\\upload\\  #上传文件存储目录 例子 linux: /usr/local/upload/ , window: D:\\upload\\
+  ip: localhost  #web访问地址
+  port: 20000  #web端口号
+  suffix-name: / #访问地址前缀 web容器部署项目地址
+  network-protocol: http
+
+logging:
+  level:
+    com.ht.common.dao: debug

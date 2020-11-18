@@ -1,0 +1,39 @@
+<div class="main">
+    <div class="searchTitle">
+        <span class="searchStyle"></span>
+        <span class="searchText">日志管理>>浏览器行为日志</span>
+    </div>
+    <div class="contentBox">
+        <div class="searchItems">
+            <div class="form-group">
+                <label class="">mac：</label>
+                <input maxlength="20" type="text" class="form-control mac">
+            </div>
+            <div class="btnBox">
+                <button type="button" class="btn btn-info js_jqQuery">查询</button>
+                <button type="button" class="btn btn-info js_resetQuery">重置</button>
+            </div>
+        </div>
+        <div class="searchItems searchItems1 none">
+            <div class="form-group">
+                <label>IP：</label>
+                <input type="text" maxlength="100" class="form-control ipAddress">
+            </div>
+            <div class="form-group">
+                <label>时间：</label>
+                <input type="text" readonly class="createTime datetimepicker form-control">
+            </div>
+            <div class="btnBox">
+                <button type="button" class="btn btn-info searchBtn">查询</button>
+                <button type="button" class="btn btn-info resetBtn">重置</button>
+                <button type="button" id="backBtn" class="btn btn-info">返回</button>
+            </div>
+        </div>
+        <div class="content">
+            <table id="detailGrid"></table>
+        </div>
+        <div class="content content1 none">
+            <table id="detailGrid2"></table>
+        </div>
+    </div>
+</div>

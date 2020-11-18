@@ -1,0 +1,32 @@
+<div class="main">
+    <div class="searchTitle">
+        <span class="searchStyle"></span>
+        <span class="searchText">日志管理>>登录日志</span>
+    </div>
+    <div class="contentBox">
+        <div class="searchItems">
+            <div class="form-group">
+                <label>账号：</label>
+                <input type="text" maxlength="100" class="form-control js_accountNumber">
+            </div>
+
+            <div class="form-group">
+                <label>IP：</label>
+                <input type="text" maxlength="100" class="form-control js_ipNumber">
+            </div>
+            <div class="form-group">
+                <label>时间：</label>
+                <input type="text" readonly class="createTime datetimepicker form-control">
+            </div>
+            <div class="btnBox">
+                <button type="button" class="btn btn-info js_jqQuery">查询</button>
+                <button type="button" class="btn btn-info js_resetQuery">重置</button>
+            </div>
+        </div>
+        <div class="content">
+            <table id="detailGrid">
+
+            </table>
+        </div>
+    </div>
+</div>

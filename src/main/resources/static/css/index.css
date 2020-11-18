@@ -1,0 +1,52 @@
+#bodyTop,#bodyCont{overflow: hidden;}
+.treeLeft{
+    width: 14%;
+    float:left;
+    height: 100%;
+}
+.welcome{
+    font-size: 20px;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 15px;
+}
+.noon{font-size: 16px;color: #2C7BFC;margin-left: 20px;}
+.iconCommon{
+    width: 20px;
+    height: 20px;
+    float: left;
+    left: 20px;
+    top: 12px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.downArrow{
+    width:0;
+    height:0;
+    border-width:8px 8px 0;
+    border-style:solid;
+    border-color:#ccc transparent transparent;/*灰 透明 透明 */
+    position: absolute;
+    right: 10px;
+    top:18px;
+}
+.upArrow{
+    width:0;
+    height:0;
+    border-width:0 8px 8px;
+    border-style:solid;
+    border-color:transparent transparent #ccc;/*灰 透明 透明 */
+    position: absolute;
+    right: 10px;
+    top:18px;
+}
+.userIcon{background-image: url("../images/menuIcons/user.png");}
+.tacticsIcon{background-image: url("../images/menuIcons/tastic.png");}
+.updateIcon{background-image: url("../images/menuIcons/update.png");}
+.safeIcon{background-image: url("../images/menuIcons/safe.png");}
+.applyIcon{background-image: url("../images/menuIcons/apply.png");}
+.logIcon{background-image: url("../images/menuIcons/log.png");}
+.homeIcon{background-image: url("../images/menuIcons/home.png");}
+
+

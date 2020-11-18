@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" style="height: 100%;">
+<!--<html lang="en" style="height: 100%;">-->
+<head>
+    <meta charset="UTF-8">
+    <title>多应用统一访问支撑平台</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="public/bootstrap/bootstrap-3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="public/bootstrap/bootbox/bootbox.min.css">
+    <link rel="stylesheet"  href="css/common.css" />
+    <script language="javascript" src="public/jquery-1.9.1.js"></script>
+    <script src="public/bootstrap/bootstrap-3.3.7/js/bootstrap.js"></script>
+    <script src="public/bootstrap/bootbox/bootbox.min.js"></script>
+    <script language="javascript" src="js/login/login.js"></script>
+    <script src="public/md5.js"></script>
+</head>
+<body class="loginBody">
+
+    <div class="loginLogo">
+    </div>
+    <div class="boxShadow">
+        <div class="loginBox pr">
+            <div class="form-header">欢迎登录多应用统一访问支撑平台</div>
+            <form>
+                <div class="form-group">
+                    <span class="left-icon fl user-icon-s"></span>
+                    <input type="text" autocomplete="off" placeholder="用户" autofocus name="js_userName" class="form-control js_userName"/>
+                    <!--<span class="left-icon fr close-icon-s"></span>-->
+                    <input id="interfaceUrl" type="hidden" th:value="${interfaceUrl}" />
+                    <input id="sss" type="hidden" value="sssss" />
+                </div>
+                <div class="form-group">
+                    <span class="left-icon fl lock-icon-s"></span>
+                    <input autocomplete="new-password" placeholder="密码" type="password" name="js_passWord" class="form-control js_passWord"/>
+                    <!--<span class="left-icon fr eye-icon-s"></span>-->
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn loginBtn">登录</button>
+                </div>
+            </form>
+            <div class="pa formShadow"></div>
+        </div>
+    </div>
+</body>
+</html>

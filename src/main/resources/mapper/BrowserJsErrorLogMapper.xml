@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.common.dao.BrowserJsErrorLogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ht.common.entity.BrowserJsErrorLog">
+        <id column="ID" property="id" />
+        <result column="IP_ADDRESS" property="ipAddress" />
+        <result column="MAC" property="mac" />
+        <result column="CONTENT" property="content" />
+        <result column="ROW_NUM" property="rowNum" />
+        <result column="FILE_NAME" property="fileName" />
+        <result column="CREATE_TIME" property="createTime" />
+        <result column="update_TIME" property="updateTime" />
+        <result column="REMARK" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, IP_ADDRESS, MAC, CONTENT, ROW_NUM, FILE_NAME, CREATE_TIME, update_TIME, REMARK
+    </sql>
+
+</mapper>

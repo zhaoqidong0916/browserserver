@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.common.dao.BrowserApplicationResourcesMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ht.common.entity.BrowserApplicationResources">
+        <id column="ID" property="id" />
+        <result column="RESOURCES_NAME" property="resourcesName" />
+        <result column="RESOURCES_DESCRIBE" property="resourcesDescribe" />
+        <result column="DOWNLOAD_URL" property="downloadUrl" />
+        <result column="RESOURCES_TYPE" property="resourcesType" />
+        <result column="RESOURCES_TYPE_NAME" property="resourcesTypeName" />
+        <result column="REVIEW_STATUS" property="reviewStatus" />
+        <result column="REVIEW" property="review" />
+        <result column="CHECK_STATUS" property="checkStatus" />
+        <result column="CREATE_TIME" property="createTime" />
+        <result column="UPDATE_TIME" property="updateTime" />
+        <result column="REMARK" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, RESOURCES_NAME, RESOURCES_DESCRIBE, DOWNLOAD_URL, RESOURCES_TYPE, RESOURCES_TYPE_NAME, REVIEW_STATUS, REVIEW, CHECK_STATUS, CREATE_TIME, UPDATE_TIME, REMARK
+    </sql>
+
+</mapper>

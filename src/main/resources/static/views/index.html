@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多应用统一访问支撑平台</title>
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../public/bootstrap/bootstrap-3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="../public/bootstrap/bootstrap-3.3.7/css/icheck-bootstrap.css">
+    <link rel="stylesheet" href="../public/bootstrap/bootstrap-table/css/bootstrap-table.css">
+    <link rel="stylesheet" href="../public/bootstrap/bootbox/bootbox.min.css">
+    <link rel="stylesheet" href="../public/uploadHeader/webuploader.css">
+    <link rel="stylesheet" href="../public/bootstrap/datetimepicker/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/route.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../public/jquery-1.9.1.js"></script>
+    <script src="../js/common/route.js"></script>
+    <script src="../public/bootstrap/bootstrap-3.3.7/js/bootstrap.js"></script>
+    <script src="../public/bootstrap/bootbox/bootbox.min.js"></script>
+    <script src="../public/bootstrap/bootstrap-table/js/bootstrap-table.js"></script>
+    <script src="../public/bootstrap/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+    <script src="../public/bootstrap/datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script src="../public/bootstrap/datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="../public/jquery.validate.js"></script>
+    <script src="../public/additional-methods.js"></script>
+    <script src="../public/messages_zh.min.js"></script>
+    <script src="../public/uploadHeader/webuploader.js"></script>
+    <script src="../public/echarts/echarts.min.js"></script>
+    <script src="../js/common/common.js"></script>
+    <script src="../js/login/index.js"></script>
+    <script src="../router.js"></script>
+    <script src="../public/md5.js"></script>
+
+</head>
+<body>
+<!--最大盒子-->
+<div id="contentDiv">
+    <!--头部-->
+    <div id="bodyTop">
+        <div class="headerBox">
+            <span class="plateName"><img style="width: 34px;height: 32px;margin: 8px 8px 5px;" src="../images/w-logo.png" />多应用统一访问支撑平台</span>
+            <div class="userBox">
+                <span id="logout" style="cursor: pointer;">退出</span>
+                <span>&nbsp;|&nbsp;</span>
+                <span id="rePwd" style="cursor: pointer;">修改密码 </span>
+                <div class="" id="dropdownUser">
+                    <i class="glyphicon glyphicon-user mr10"></i>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--身体-->
+    <!--左侧树-->
+    <div class="treeLeft">
+        <div class="treebox amazonmenu">
+            <!--<div class="welcome">WELCOME</div>-->
+            <ul class="menu">
+            </ul>
+        </div>
+    </div>
+    <div id="bodyCont">
+        <!--右侧内容-->
+        <div id="ui-view">
+
+        </div>
+    </div>
+</div>
+
+<div id="resetPwd" class="modal fade" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header my-modal-header">
+                <span class="modal-title">修改密码</span>
+            </div>
+            <div class="modal-body update-modal-body">
+                <div class="form-group">
+                    <label class=""><span class="red">*</span>旧密码：</label>
+                    <input required maxlength="20" minlength="6" type="password" class="form-control oldPwd" name="oldPwd" placeholder="密码">
+                </div>
+                <div class="form-group">
+                    <label class=""><span class="red">*</span>新密码：</label>
+                    <input required maxlength="20" minlength="6" type="password" class="form-control newPwd" name="newPwd" placeholder="密码">
+                </div>
+                <div class="form-group">
+                    <label class=""><span class="red">*</span>确认密码：</label>
+                    <input required maxlength="20" minlength="6" type="password" class="form-control rePwd" name="rePwd" placeholder="密码">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-info" id="pwdSaveBtn">确认</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--审核提示框-->
+<div class="modal fade" id="suggestionModal" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header my-modal-header">
+                <span class="modal-title">审核意见</span>
+            </div>
+            <div class="modal-body update-modal-body">
+                <form >
+                    <input type="hidden" name="id" class="id">
+                    <div class="form-group">
+                        <label class="">是否同意：</label>
+                        <select class="roleList form-control" name="suggestion">
+                            <option value="2">同意</option>
+                            <option value="3">不同意</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>审核意见:</label>
+                        <textarea class="form-control textarea" placeholder="请输入审核意见"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary" id="saveBtnMine">确认</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--禁用提示框-->
+<div id="ajaxRes" class="modal fade" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header my-modal-header">
+                <span class="modal-title">添加权限</span>
+            </div>
+            <div class="modal-body update-modal-body">
+                <input type="hidden" class="id">
+                <input type="hidden" class="status">
+                <div class="authTips">确认禁用或启用？</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-info" id="saveBtn">确认</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="videoDetail" class="modal fade" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header my-modal-header">
+            <span class="modal-title">上传视频图片</span>
+        </div>
+        <div class="modal-body update-modal-body">
+            <form>
+                <div class="form-group">
+                    <label>名称:</label>
+                    <input maxlength="300" class="vTitle form-control" type="text"/>
+                </div>
+                <div class="form-group">
+                    <label>描述:</label>
+                    <input maxlength="300" class="vContent form-control" type="text"/>
+                </div>
+                <div class="form-group" style="max-height:250px;">
+                    <label >附件:</label>
+                    <div class="form-control playerDiv" style="height: 220px;"></div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default closeBtn" data-dismiss="modal">关闭</button>
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>

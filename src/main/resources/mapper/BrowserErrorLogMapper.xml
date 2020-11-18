@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.common.dao.BrowserErrorLogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ht.common.entity.BrowserErrorLog">
+        <result column="BROWSER_VERSION" property="browserVersion" />
+        <result column="CHECK_STATUS" property="checkStatus" />
+        <result column="CONTENT" property="content" />
+        <result column="CREATE_TIME" property="createTime" />
+        <result column="DAY" property="day" />
+        <result column="ID" property="id" />
+        <result column="IP_ADDRESS" property="ipAddress" />
+        <result column="MAC" property="mac" />
+        <result column="MONTH" property="month" />
+        <result column="OS_VERSION" property="osVersion" />
+        <result column="REMARK" property="remark" />
+        <result column="TITLE" property="title" />
+        <result column="TYPE_ID" property="typeId" />
+        <result column="UPDATE_TIME" property="updateTime" />
+        <result column="URL" property="url" />
+        <result column="USE_TIME" property="useTime" />
+        <result column="YEAR" property="year" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        BROWSER_VERSION, CHECK_STATUS, CONTENT, CREATE_TIME, DAY, ID, IP_ADDRESS, MAC, MONTH, OS_VERSION, REMARK, TITLE, TYPE_ID, UPDATE_TIME, URL, USE_TIME, YEAR
+    </sql>
+
+</mapper>

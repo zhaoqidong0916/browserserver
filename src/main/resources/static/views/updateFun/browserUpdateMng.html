@@ -1,0 +1,130 @@
+
+<div class="main">
+    <div class="searchTitle">
+        <span class="searchStyle"></span>
+        <span class="searchText">升级功能>>浏览器升级管理</span>
+    </div>
+    <div class="contentBox">
+        <div class="searchItems">
+            <!--<div class="form-group">-->
+                <!--<label class="">安装包名称：</label>-->
+                <!--<input maxlength="100" type="text" name="browserName" class="form-control browserName">-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label class="">强制更新：</label>-->
+                <!--<select name="constraintStatus" class="form-control constraintStatus">-->
+                    <!--<option value="">==请选择==</option>-->
+                    <!--<option value="0">是</option>-->
+                    <!--<option value="1">否</option>-->
+                <!--</select>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label class="">系统类型：</label>-->
+                <!--<select name="browserTypeName" class="form-control browserTypeName">-->
+                    <!--<option value="">==请选择==</option>-->
+                    <!--<option value="windows">windows</option>-->
+                    <!--<option value="兆芯">兆芯</option>-->
+                    <!--<option value="arm">arm</option>-->
+                    <!--<option value="龙芯">龙芯</option>-->
+                <!--</select>-->
+            <!--</div>-->
+            <div class="btnBox">
+                <!--<button type="button" class="btn btn-info js_jqQuery">查询</button>-->
+                <!--<button type="button" class="btn btn-info js_resetQuery">重置</button>-->
+                <button type="button" class="btn btn-info customerAdd">新建</button>
+            </div>
+        </div>
+        <div class="content">
+            <table id="detailGrid">
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="browserUpdateModal" class="modal fade" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header my-modal-header">
+                <span class="modal-title">添加控件安装包</span>
+            </div>
+            <div class="modal-body update-modal-body">
+                <form >
+                    <input type="hidden" class="rowId">
+                    <input type="hidden" class="browserType">
+                    <div class="form-group">
+                        <label>强制更新:</label>
+                        <select required name="constraintStatus" class="form-control constraintStatus">
+                            <option selected value="0">是</option>
+                            <option value="1">否</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>上传文件:</label>
+                        <div id="uploader" class="wu-example uploaders" style="overflow: hidden;">
+                            <div id="fileList" class="uploader-list">
+                                <p style="display: none;color: red;" class="flagPs">请选择需要上传的文件!</p>
+                                <p style="display: none;color: red;" class="tips"></p>
+                            </div>
+                            <div class="btns fl" style="margin-top: 5px;width: 100%;">
+                                <div id="upInfo" ></div>
+                                <button id="filePicker" type="button" class="fl btn" style="padding: 0;" >选择文件</button>
+                                <button type="button" class="btn btn-info fr" id="btn">开始上传</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>安装包描述</label>
+                        <textarea maxlength="260" name="browserDescribe" class="browserDescribe form-control"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-info submitUserForm">确认</button>
+                <button type="button" class="btn btn-default closeBtn" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="browserDetailModal" class="modal fade" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header my-modal-header">
+                <span class="modal-title">查看安装包</span>
+            </div>
+            <div class="modal-body update-modal-body">
+                <form >
+                    <input type="hidden" class="rowId">
+                    <div class="form-group">
+                        <label class="shortLabel">安装包名称:</label>
+                        <input name="browserName" class="form-control shortInput browserName"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="shortLabel">安装包地址:</label>
+                        <input name="downloadUrl" class="form-control shortInput downloadUrl"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="shortLabel">系统类型:</label>
+                        <input name="browserTypeName" class="form-control shortInput browserTypeName"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="shortLabel">强制更新:</label>
+                        <input name="constraintStatus" class="form-control shortInput constraintStatus"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="shortLabel">当前版本:</label>
+                        <input name="historyStatus" class="form-control shortInput historyStatus"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="shortLabel fl">安装包描述:</label>
+                        <textarea maxlength="260" name="browserDescribe" class="browserDescribe form-control shortInput ml3"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default closeBtn" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

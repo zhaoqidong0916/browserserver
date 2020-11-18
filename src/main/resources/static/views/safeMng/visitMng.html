@@ -1,0 +1,61 @@
+
+<div class="main">
+    <div class="searchTitle">
+        <span class="searchStyle"></span>
+        <span class="searchText">安全管理>>访问管控</span>
+    </div>
+    <div class="contentBox">
+        <div class="searchItems">
+            <div class="form-group">
+                <label class="">URL：</label>
+                <input type="text" maxlength="100" name="forbiddenUrl" class="form-control forbiddenUrl">
+            </div>
+            <div class="form-group">
+                <label class="">状态：</label>
+                <select class="form-control state" name="state">
+                    <option value="">==请选择==</option>
+                    <option value="0">白名单</option>
+                    <option value="1">黑名单</option>
+                </select>
+            </div>
+            <div class="btnBox">
+                <button type="button" class="btn btn-info searchBtn">查询</button>
+                <button type="button" class="btn btn-info resetBtn">重置</button>
+                <button type="button" class="btn btn-info addBtn">新建</button>
+            </div>
+        </div>
+        <div class="content">
+            <table id="detailGrid">
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="visitModal" class="modal fade" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header my-modal-header">
+                <span class="modal-title">添加访问黑名单</span>
+            </div>
+            <div class="modal-body update-modal-body">
+                <form>
+                    <input type="hidden" class="rowId">
+                    <input type="hidden" class="beforeUrl">
+                    <div class="form-group">
+                        <label class=""><span class="red">*</span>URL地址：</label>
+                        <input required type="url" name="forbiddenUrl" class="form-control forbiddenUrl"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="">备注：</label>
+                        <textarea name="urlDescription" class="form-control urlDescription"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-info submitUserForm">确认</button>
+                <button type="button" class="btn btn-default closeBtn" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

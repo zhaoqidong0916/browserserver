@@ -1,0 +1,71 @@
+
+<div class="main">
+    <div class="searchTitle">
+        <span class="searchStyle"></span>
+        <span class="searchText">配置管理>>浏览器兼容配置</span>
+    </div>
+    <div class="contentBox">
+        <div class="searchItems">
+            <div class="form-group">
+                <label class="">浏览器内核：</label>
+                <select class="form-control kernel">
+                    <option value="">==请选择==</option>
+                    <option value="IE5">IE5</option>
+                    <option value="IE6">IE6</option>
+                    <option value="IE7">IE7</option>
+                    <option value="IE8">IE8</option>
+                    <option value="IE9">IE9</option>
+                    <option value="IE10">IE10</option>
+                    <option value="IE11">IE11</option>
+                </select>
+            </div>
+            <div class="btnBox">
+                <button type="button" class="btn btn-info searchBtn">查询</button>
+                <button type="button" class="btn btn-info resetBtn">重置</button>
+                <button type="button" class="btn btn-info addBtn">新建</button>
+            </div>
+        </div>
+        <div class="content">
+            <table id="detailGrid">
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="compatibleModal" class="modal fade" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header my-modal-header">
+                <span class="modal-title">添加</span>
+            </div>
+            <div class="modal-body update-modal-body">
+                <form>
+                    <input type="hidden" class="rowId">
+                    <input type="hidden" class="urlBefore">
+                    <div class="form-group">
+                        <label class=""><span class="red">*</span>URL：</label>
+                        <input required type="url" name="url" class="form-control url"/>
+                    </div>
+                    <div class="form-group">
+                        <label class=""><span class="red">*</span>浏览器内核：</label>
+                        <input type="text" name="kernel" class="form-control kernel none"/>
+                        <select required name="kernel" class="form-control kernel">
+                            <option value="IE5">IE5</option>
+                            <option value="IE6">IE6</option>
+                            <option value="IE7">IE7</option>
+                            <option value="IE8">IE8</option>
+                            <option value="IE9">IE9</option>
+                            <option value="IE10">IE10</option>
+                            <option value="IE11">IE11</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-info submitUserForm">确认</button>
+                <button type="button" class="btn btn-default closeBtn" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

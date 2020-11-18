@@ -1,0 +1,133 @@
+
+<div class="main">
+    <div class="searchTitle">
+        <span class="searchStyle"></span>
+        <span class="searchText">配置管理>>浏览器通用配置</span>
+    </div>
+    <div class="contentBox">
+        <div class="content">
+            <table id="detailGrid">
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="generalModal" class="modal fade" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header my-modal-header">
+                <span class="modal-title">新建证书类型</span>
+            </div>
+            <div class="modal-body update-modal-body">
+                <form>
+                    <input type="hidden" class="rowId">
+                    <div class="form-group">
+                        <label class="">浏览器默认首页：</label>
+                        <input name="indexPage" type="text" required class="form-control indexPage"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="">拷贝状态：</label>
+                        <input type="text" name="copyState" class="form-control copyState"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="">拖拽状态：</label>
+                        <input type="text" name="dragState" class="form-control dragState"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="">打印状态：</label>
+                        <input type="text" name="printState" class="form-control printState"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="">下载状态：</label>
+                        <input type="text" name="downloadState" class="form-control downloadState"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="">缓存状态：</label>
+                        <input type="text" name="cacheState" class="form-control cacheState"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="">完整性校验：</label>
+                        <input type="text" name="integrityState" class="form-control integrityState"/>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-info submitUserForm">确认</button>
+                <button type="button" class="btn btn-default closeBtn" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="generalEditModal" class="modal fade" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header my-modal-header">
+                <span class="modal-title">证书类型</span>
+            </div>
+            <div class="modal-body update-modal-body">
+                <form>
+                    <input type="hidden" class="rowId">
+                    <div class="form-group">
+                        <label class="">浏览器默认首页：</label>
+                        <input name="indexPage" type="url" required class="form-control indexPage"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="">拷贝状态：</label>
+                        <select name="copyState" class="form-control copyState">
+                            <option selected value="1">开启</option>
+                            <option value="0">关闭</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="">拖拽状态：</label>
+                        <select name="dragState" class="form-control dragState">
+                            <option selected value="1">开启</option>
+                            <option value="0">关闭</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="">打印状态：</label>
+                        <select name="printState" class="form-control printState">
+                            <option selected value="1">开启</option>
+                            <option value="0">关闭</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="">下载状态：</label>
+                        <select name="downloadState" class="form-control downloadState">
+                            <option selected value="1">开启</option>
+                            <option value="0">关闭</option>
+                        </select>
+                    </div>
+                    <!--<div class="form-group">-->
+                        <!--<label class="">截屏状态：</label>-->
+                        <!--<select name="screenshotState" class="form-control screenshotState">-->
+                            <!--<option selected value="1">开启</option>-->
+                            <!--<option value="0">禁止</option>-->
+                        <!--</select>-->
+                    <!--</div>-->
+                    <div class="form-group">
+                        <label class="">缓存状态：</label>
+                        <select name="cacheState" class="form-control cacheState">
+                            <option selected value="1">开启</option>
+                            <option value="0">关闭</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="">完整性校验：</label>
+                        <select name="integrityState" class="form-control integrityState">
+                            <option selected value="1">开启</option>
+                            <option value="0">关闭</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-info submitUserForm">确认</button>
+                <button type="button" class="btn btn-default closeBtn" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.common.dao.BrowserGeneralConfigMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ht.common.entity.BrowserGeneralConfig">
+        <id column="ID" property="id" />
+        <result column="COPY_STATE" property="copyState" />
+        <result column="DRAG_STATE" property="dragState" />
+        <result column="PRINT_STATE" property="printState" />
+        <result column="DOWNLOAD_STATE" property="downloadState" />
+        <result column="SCREENSHOT_STATE" property="screenshotState" />
+        <result column="CACHE_STATE" property="cacheState" />
+        <result column="INTEGRITY_STATE" property="integrityState" />
+        <result column="REVIEW_STATUS" property="reviewStatus" />
+        <result column="CHECK_STATUS" property="checkStatus" />
+        <result column="CREATE_TIME" property="createTime" />
+        <result column="UPDATE_TIME" property="updateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, COPY_STATE, DRAG_STATE, PRINT_STATE, DOWNLOAD_STATE, SCREENSHOT_STATE, CACHE_STATE, INTEGRITY_STATE, REVIEW_STATUS, CHECK_STATUS, CREATE_TIME, UPDATE_TIME
+    </sql>
+
+</mapper>

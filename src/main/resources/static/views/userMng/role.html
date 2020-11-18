@@ -1,0 +1,78 @@
+<script src="../public/md5.js"></script>
+<div class="main">
+    <div class="searchTitle">
+        <span class="searchStyle"></span>
+        <span class="searchText">用户管理>>角色管理</span>
+    </div>
+    <div class="contentBox">
+        <div class="searchItems">
+            <div class="form-group">
+                <label class="">角色名：</label>
+                <input type="text" maxlength="40" class="form-control roleName">
+            </div>
+
+            <div class="btnBox">
+                <button type="button" class="btn btn-info js_role">新建角色</button>
+                <button type="button" class="btn btn-info js_resetQuery">重置</button>
+                <button type="button" class="btn btn-info query">查询</button>
+            </div>
+        </div>
+        <div class="content">
+            <table id="detailGrid">
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- 新建角色 -->
+<div id="popRole" class="modal fade" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header my-modal-header">
+                <span class="modal-title">添加角色</span>
+            </div>
+            <div class="modal-body update-modal-body">
+                <form id="roleForm">
+                    <input type="hidden" class="roleId">
+                    <input type="hidden" class="beforeRoleName">
+                    <div class="form-group">
+                        <label class=""><span class="red">*</span>角色名称：</label>
+                        <input required maxlength="100" type="text" name="roleName" class="form-control roleName" placeholder="请填写角色信息">
+                    </div>
+                    <div class="form-group">
+                        <label class="">角色描述：</label>
+                        <textarea maxlength="300" name="roleDescription" class="form-control roleDescription" placeholder="请输入角色描述"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-info addRoleBtn submitUserForm">确定<i class=""></i></button>
+                <button data-dismiss="modal" type="button" class="close-btn btn btn-info btn-md">关闭<i class=""></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--用户管理以及角色管理弹框-->
+<div class="modal fade" id="menuSetModal"  aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header my-modal-header">
+                <span class="modal-title">添加角色权限</span>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" class="roleId">
+                <input type="hidden" class="roleName">
+                <div id="electionBox1" style="max-height: 500px;overflow: auto;">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-info addRoleBtn1">确认</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+

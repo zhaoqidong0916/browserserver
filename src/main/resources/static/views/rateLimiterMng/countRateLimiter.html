@@ -1,0 +1,36 @@
+
+<div class="main">
+    <div class="searchTitle">
+        <span class="searchStyle"></span>
+        <span class="searchText">限流管理>>下载限流管控</span>
+    </div>
+    <div class="contentBox">
+        <div class="content">
+            <table id="detailGrid">
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="watermarkModal" class="modal fade" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header my-modal-header">
+                <span class="modal-title">添加</span>
+            </div>
+            <div class="modal-body update-modal-body">
+                <form>
+                    <div class="form-group">
+                        <label class="shortLabel tl">设定限值：</label>
+                        <input required type="text" name="concurrenceAmount" class="form-control watermarkName shortInput"/>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-info submitUserForm">确认</button>
+                <button type="button" class="btn btn-default closeBtn" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

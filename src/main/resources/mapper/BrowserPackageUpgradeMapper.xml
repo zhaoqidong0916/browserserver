@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ht.common.dao.BrowserPackageUpgradeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ht.common.entity.BrowserPackageUpgrade">
+        <id column="ID" property="id" />
+        <result column="BROWSER_NAME" property="browserName" />
+        <result column="BROWSER_DESCRIBE" property="browserDescribe" />
+        <result column="DOWNLOAD_URL" property="downloadUrl" />
+        <result column="MD5" property="md5" />
+        <result column="VERSION" property="version" />
+        <result column="VERSION_MARK" property="versionMark" />
+        <result column="BROWSER_TYPE" property="browserType" />
+        <result column="BROWSER_TYPE_NAME" property="browserTypeName" />
+        <result column="CONSTRAINT_STATUS" property="constraintStatus" />
+        <result column="HINT_VALUE" property="hintValue" />
+        <result column="REVIEW_STATUS" property="reviewStatus" />
+        <result column="REVIEW" property="review" />
+        <result column="CHECK_STATUS" property="checkStatus" />
+        <result column="HISTORY_STATUS" property="historyStatus" />
+        <result column="CREATE_TIME" property="createTime" />
+        <result column="UPDATE_TIME" property="updateTime" />
+        <result column="REMARK" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, BROWSER_NAME, BROWSER_DESCRIBE, DOWNLOAD_URL, MD5, VERSION, VERSION_MARK, BROWSER_TYPE, BROWSER_TYPE_NAME, CONSTRAINT_STATUS, HINT_VALUE, REVIEW_STATUS, REVIEW, CHECK_STATUS, CREATE_TIME,HISTORY_STATUS, UPDATE_TIME, REMARK
+    </sql>
+
+</mapper>

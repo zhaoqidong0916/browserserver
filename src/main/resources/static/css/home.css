@@ -1,0 +1,86 @@
+body,div,p,li,ul,ol{margin: 0;padding: 0;}
+ul,ol,li{list-style: none;}
+html{width: 100%;height: 100%;}
+body{
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/home/bg.jpg");
+    overflow: hidden;
+}
+.bgCommon{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.mainDiv{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.35;
+    float: left;
+}
+.headerLogo{
+    width: 114px;
+    height: 57px;
+    position: absolute;
+    margin-left: -57px;
+    left: 50%;
+    top: 5%;
+    background-image: url("../images/home/htLogo.png");
+    background-size: contain;
+}
+.footer{
+    width: 100%;
+    height: 26px;
+    position: absolute;
+    bottom: 50px;
+    background-image: url("../images/home/poem.png");
+    background-size: contain;
+}
+.appStore{
+    width: 70%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-left: -35%;
+}
+.dl{
+    width: calc(25% - 4px);
+    margin-bottom: 20px;
+    display: inline-block;
+}
+.dt{
+    width: 90px;
+    height: 90px;
+    margin: auto;
+    cursor: pointer;
+}
+.dd{
+    width: 50%;
+    height: 21px;
+    overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
+    margin: 10px auto 0;text-align: center;color: #fff;cursor: pointer;}
+.pageBtn{
+    width: 100%;
+    height:30px;
+    text-align: center;
+    position: absolute;
+    top: calc(30% + 320px);
+}
+.pageBtn li{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 15px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.unselected{opacity: 30%;}
+
+
+@media screen and (min-width: 1400px) {
+    .pageBtn{
+        top:calc(30% + 400px);
+    }
+}
+
